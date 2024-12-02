@@ -896,10 +896,13 @@ class ExchangePyBase(ExchangeBase, ABC):
             **kwargs,
     ) -> Dict[str, Any]:
 
+        
+
         last_exception = None
         rest_assistant = await self._web_assistants_factory.get_rest_assistant()
 
         url = overwrite_url or await self._api_request_url(path_url=path_url, is_auth_required=is_auth_required)
+        print(f"API Request: {url}")
 
         for _ in range(2):
             try:
@@ -917,6 +920,7 @@ class ExchangePyBase(ExchangeBase, ABC):
                 return request_result
             except IOError as request_exception:
                 last_exception = request_exception
+                print(last_exception)
                 if self._is_request_exception_related_to_time_synchronizer(request_exception=request_exception):
                     self._time_synchronizer.clear_time_offset_ms_samples()
                     await self._update_time_synchronizer()
