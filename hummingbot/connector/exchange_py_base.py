@@ -922,7 +922,6 @@ class ExchangePyBase(ExchangeBase, ABC):
                 last_exception = request_exception
                 print(last_exception)
                 if self._is_request_exception_related_to_time_synchronizer(request_exception=request_exception):
-                    self._time_synchronizer.clear_time_offset_ms_samples()
                     await self._update_time_synchronizer()
                 else:
                     raise
