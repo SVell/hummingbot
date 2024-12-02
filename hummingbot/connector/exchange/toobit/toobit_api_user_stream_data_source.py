@@ -2,12 +2,11 @@ import asyncio
 import time
 from typing import TYPE_CHECKING, Any, Dict, Optional
 
-from hummingbot.connector.exchange.toobit.toobit_web_utils import public_rest_url
 from hummingbot.connector.exchange.toobit import toobit_constants as CONSTANTS
 from hummingbot.connector.exchange.toobit.toobit_auth import ToobitAuth
 from hummingbot.core.data_type.user_stream_tracker_data_source import UserStreamTrackerDataSource
 from hummingbot.core.utils.async_utils import safe_ensure_future
-from hummingbot.core.web_assistant.connections.data_types import RESTMethod, WSJSONRequest, WSPlainTextRequest, WSResponse
+from hummingbot.core.web_assistant.connections.data_types import RESTMethod, WSJSONRequest, WSPlainTextRequest
 from hummingbot.core.web_assistant.web_assistants_factory import WebAssistantsFactory
 from hummingbot.core.web_assistant.ws_assistant import WSAssistant
 from hummingbot.logger import HummingbotLogger

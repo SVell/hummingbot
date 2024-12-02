@@ -1,13 +1,11 @@
 import base64
 import hashlib
 import hmac
-from collections import OrderedDict
-from datetime import datetime
 import json
-from typing import Any, Dict, Optional
-from urllib.parse import urlencode
-
 import urllib
+from collections import OrderedDict
+from typing import Any, Dict
+from urllib.parse import urlencode
 
 from hummingbot.connector.time_synchronizer import TimeSynchronizer
 from hummingbot.core.web_assistant.auth import AuthBase

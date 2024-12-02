@@ -1,12 +1,8 @@
 import hashlib
 import hmac
-import json
 import math
-import time
-from typing import Any, Dict
-from urllib.parse import urlencode
-
 import urllib
+from typing import Any, Dict
 
 from hummingbot.connector.time_synchronizer import TimeSynchronizer
 from hummingbot.core.web_assistant.auth import AuthBase

@@ -1,16 +1,19 @@
 import asyncio
 from decimal import Decimal
-import json
 from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple
 
 from bidict import bidict
 
+from hummingbot.connector.exchange.coinstore import (
+    coinstore_constants as CONSTANTS,
+    coinstore_utils,
+    coinstore_web_utils as web_utils,
+)
 from hummingbot.connector.exchange.coinstore.coinstore_api_order_book_data_source import CoinstoreAPIOrderBookDataSource
-from hummingbot.connector.exchange.coinstore.coinstore_api_user_stream_data_source import CoinstoreAPIUserStreamDataSource
+from hummingbot.connector.exchange.coinstore.coinstore_api_user_stream_data_source import (
+    CoinstoreAPIUserStreamDataSource,
+)
 from hummingbot.connector.exchange.coinstore.coinstore_auth import CoinstoreAuth
-from hummingbot.connector.exchange.coinstore import coinstore_constants as CONSTANTS, coinstore_utils, coinstore_web_utils as web_utils
-from hummingbot.connector.exchange.okx.okx_api_order_book_data_source import OkxAPIOrderBookDataSource
-from hummingbot.connector.exchange.okx.okx_api_user_stream_data_source import OkxAPIUserStreamDataSource
 from hummingbot.connector.exchange_base import s_decimal_NaN
 from hummingbot.connector.exchange_py_base import ExchangePyBase
 from hummingbot.connector.trading_rule import TradingRule
@@ -38,7 +41,6 @@ class CoinstoreExchange(ExchangePyBase):
                  coinstore_secret_key: str,
                  trading_pairs: Optional[List[str]] = None,
                  trading_required: bool = True):
-
         self.coinstore_api_key = coinstore_api_key
         self.coinstore_secret_key = coinstore_secret_key
         self._trading_required = trading_required

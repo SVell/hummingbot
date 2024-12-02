@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple
 
 from bidict import bidict
 
-from hummingbot.connector.exchange.toobit import toobit_constants as CONSTANTS, toobit_utils, toobit_web_utils as web_utils
+from hummingbot.connector.exchange.toobit import toobit_constants as CONSTANTS, toobit_web_utils as web_utils
 from hummingbot.connector.exchange.toobit.toobit_api_order_book_data_source import ToobitAPIOrderBookDataSource
 from hummingbot.connector.exchange.toobit.toobit_api_user_stream_data_source import ToobitAPIUserStreamDataSource
 from hummingbot.connector.exchange.toobit.toobit_auth import ToobitAuth
